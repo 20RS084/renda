@@ -17,16 +17,16 @@ function toRanking() {
 // 【mBaaS】保存したデータの検索と取得
 function checkRanking() {
     // **********【問題２】ランキングを表示しよう！**********
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    var highScore = ncmb.DataStore("Score");
+    highScore.order("score",true).limit(5).fetchAll()
+    .then(function (){
+// 保存に成功した場合の処理
+console.log("保存に成功しました。");
+})
+.catch(function (error){
+// 保存に失敗した場合の処理
+console.log("保存に失敗しました。エラー:" + error);
+});
     
     // ******************************************************
 }
